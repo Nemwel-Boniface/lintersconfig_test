@@ -1,0 +1,1 @@
+# lintersconfig_test
