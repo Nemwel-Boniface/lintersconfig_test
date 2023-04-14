@@ -1,52 +1,44 @@
 const sect = document.querySelector('.lists');
 
-const my_array = [1, 2,3,4]
-
-const my_lists = [
+const myLists = [
   {
     id: 1,
     heading: 'My heading',
-    desc: 'My desc'
+    desc: 'My desc',
   },
   {
     id: 2,
     heading: 'My heading two',
-    desc: 'My desc'
+    desc: 'My desc',
   },
   {
     id: 3,
     heading: 'My heading three',
-    desc: 'My desc'
-  }
+    desc: 'My desc',
+  },
 ];
 
-console.log(my_lists[1].heading)
-
-let allLists = () => {
+const allLists = () => {
   sect.innerHTML = '';
-  for(let i = 0; i < my_lists.length; i++) {
+  for (let i = 0; i < myLists.length; i += 1) {
     const listWrapper = document.createElement('div');
     const listHeading = document.createElement('h2');
-    listHeading.textContent = my_lists[i].heading;
+    listHeading.textContent = myLists[i].heading;
     const listDesc = document.createElement('p');
-    listDesc.textContent = my_lists[i].desc;
+    listDesc.textContent = myLists[i].desc;
     const listBtn = document.createElement('button');
     listBtn.textContent = 'Example';
 
     listWrapper.append(listHeading, listDesc, listBtn);
 
-    sect.appendChild(listWrapper)
+    sect.appendChild(listWrapper);
 
     listBtn.addEventListener('click', () => {
-      console.log(`The button at id: ${my_lists[i].id} was clicked`)
-    })
+      // console.log(`The button at id: ${myLists[i].id} was clicked`);
+    });
   }
+};
 
-}
-
-allLists()
-
-
-// window.addEventListener('load', () => {
-//   allLists()
-// })
+window.addEventListener('load', () => {
+  allLists();
+});
